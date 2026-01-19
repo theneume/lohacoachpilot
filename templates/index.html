@@ -1,0 +1,959 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LOHA - Love of Human Attraction</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            min-height: 100vh;
+            color: #fff;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Header */
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 30px 40px;
+            background: linear-gradient(135deg, #f39c12 0%, #e67e22 100%);
+            border-radius: 20px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(255, 107, 157, 0.3);
+        }
+
+        .header-left {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .logo {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid #ffd93d;
+        }
+
+        .header-text h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 5px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .header-text .tagline {
+            font-size: 1rem;
+            font-weight: 400;
+            opacity: 0.95;
+        }
+
+        .header-buttons {
+            display: flex;
+            gap: 15px;
+        }
+
+        .header-btn {
+            padding: 12px 25px;
+            border: none;
+            border-radius: 25px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .header-btn.primary {
+            background: #ffd93d;
+            color: #1a1a2e;
+        }
+
+        .header-btn.secondary {
+            background: rgba(255,255,255,0.2);
+            color: #fff;
+            border: 2px solid #fff;
+        }
+
+        .header-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(255, 217, 61, 0.4);
+        }
+
+        /* Hero Section */
+        .hero-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .hero-image {
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            height: 400px;
+        }
+
+        .hero-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .hero-image:hover img {
+            transform: scale(1.05);
+        }
+
+        .hero-content {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .hero-content h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, #f39c12 0%, #ffd93d 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-content p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 15px;
+            opacity: 0.9;
+        }
+
+        /* Feature Cards */
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+
+        .feature-card {
+            background: rgba(255,255,255,0.05);
+            padding: 30px;
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.1);
+            transition: all 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(255, 107, 157, 0.2);
+        }
+
+        .feature-card .icon {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+
+        .feature-card h3 {
+            color: #f39c12;
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+
+        .feature-card p {
+            opacity: 0.9;
+            line-height: 1.6;
+        }
+
+        /* Archetypes Section */
+        .archetypes-section {
+            background: rgba(255,255,255,0.03);
+            padding: 40px;
+            border-radius: 20px;
+            margin: 40px 0;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .archetypes-section h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            background: linear-gradient(135deg, #f39c12 0%, #ffd93d 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .archetypes-section .subtitle {
+            text-align: center;
+            margin-bottom: 30px;
+            opacity: 0.8;
+        }
+
+        .archetypes-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .archetype-token {
+            background: rgba(255,255,255,0.05);
+            padding: 20px;
+            border-radius: 15px;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255,255,255,0.1);
+            cursor: pointer;
+        }
+
+        .archetype-token:hover {
+            transform: scale(1.05);
+            background: rgba(255,255,255,0.1);
+            border-color: #f39c12;
+        }
+
+        .archetype-token .token-icon {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        .archetype-token h4 {
+            color: #ffd93d;
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+        }
+
+        .archetype-token p {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        .archetypes-info {
+            background: rgba(255,107,157,0.1);
+            padding: 20px;
+            border-radius: 15px;
+            text-align: center;
+            border-left: 4px solid #f39c12;
+        }
+
+        .archetypes-info h3 {
+            color: #f39c12;
+            margin-bottom: 10px;
+        }
+
+        .archetypes-info p {
+            opacity: 0.9;
+            line-height: 1.6;
+        }
+
+        /* Form Section */
+        .form-section {
+            background: rgba(255,255,255,0.05);
+            padding: 40px;
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            margin-bottom: 40px;
+        }
+
+        .form-section h2 {
+            font-size: 2rem;
+            margin-bottom: 30px;
+            color: #f39c12;
+            text-align: center;
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #f39c12;
+            font-size: 0.95rem;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid rgba(255,255,255,0.1);
+            border-radius: 10px;
+            background: rgba(255,255,255,0.05);
+            color: #fff;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        input:focus, select:focus, textarea:focus {
+            outline: none;
+            border-color: #f39c12;
+            background: rgba(255,255,255,0.1);
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .relationship-entry {
+            background: rgba(255,255,255,0.03);
+            padding: 20px;
+            border-radius: 15px;
+            margin-bottom: 20px;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .relationship-entry h3 {
+            color: #f39c12;
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+        }
+
+        button.submit-btn {
+            background: linear-gradient(135deg, #f39c12 0%, #e67e22 100%);
+            color: #fff;
+            border: none;
+            padding: 15px 40px;
+            font-size: 1.2rem;
+            font-weight: 700;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 20px rgba(255, 107, 157, 0.4);
+            display: block;
+            margin: 30px auto;
+        }
+
+        button.submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(255, 107, 157, 0.5);
+        }
+
+        /* Chat Section */
+        .chat-section {
+            display: none;
+            background: rgba(255,255,255,0.05);
+            padding: 30px;
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .chat-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid rgba(255, 107, 157, 0.3);
+        }
+
+        .chat-header h2 {
+            color: #f39c12;
+            font-size: 1.8rem;
+        }
+
+        .chat-container {
+            height: 500px;
+            overflow-y: auto;
+            padding: 20px;
+            background: rgba(0,0,0,0.2);
+            border-radius: 15px;
+            margin-bottom: 20px;
+        }
+
+        .message {
+            margin-bottom: 20px;
+            animation: fadeIn 0.3s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .message.user {
+            text-align: right;
+        }
+
+        .message.assistant {
+            text-align: left;
+        }
+
+        .message-content {
+            display: inline-block;
+            max-width: 70%;
+            padding: 15px 20px;
+            border-radius: 20px;
+            line-height: 1.6;
+        }
+
+        .message.user .message-content {
+            background: linear-gradient(135deg, #f39c12 0%, #e67e22 100%);
+            border-bottom-right-radius: 5px;
+        }
+
+        .message.assistant .message-content {
+            background: rgba(255,255,255,0.1);
+            border-bottom-left-radius: 5px;
+        }
+
+        .chat-input {
+            display: flex;
+            gap: 10px;
+        }
+
+        .chat-input input {
+            flex: 1;
+            margin-bottom: 0;
+        }
+
+        .chat-input button {
+            background: linear-gradient(135deg, #f39c12 0%, #e67e22 100%);
+            margin: 0;
+            padding: 12px 30px;
+            font-size: 1rem;
+            border: none;
+            border-radius: 25px;
+            color: #fff;
+            cursor: pointer;
+            font-weight: 600;
+        }
+
+        /* Testimonial */
+        .testimonial {
+            background: linear-gradient(135deg, #f39c12 0%, #e67e22 100%);
+            padding: 40px;
+            border-radius: 20px;
+            text-align: center;
+            margin: 40px 0;
+            box-shadow: 0 10px 30px rgba(255, 107, 157, 0.3);
+        }
+
+        .testimonial p {
+            font-size: 1.3rem;
+            font-style: italic;
+            margin-bottom: 20px;
+        }
+
+        .testimonial cite {
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            color: rgba(255,255,255,0.7);
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                text-align: center;
+                gap: 20px;
+            }
+
+            .hero-section {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-image {
+                height: 300px;
+            }
+
+            .archetypes-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .message-content {
+                max-width: 85%;
+            }
+        }
+
+        /* Typing Indicator */
+        .typing-indicator {
+            display: inline-block;
+            padding: 15px 20px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 20px;
+            border-bottom-left-radius: 5px;
+        }
+
+        .typing-indicator span {
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            background: #f39c12;
+            border-radius: 50%;
+            margin: 0 2px;
+            animation: typing 1.4s infinite;
+        }
+
+        @keyframes typing {
+            0%, 60%, 100% { transform: translateY(0); }
+            30% { transform: translateY(-10px); }
+        }
+    </style>
+<script src="https://sites.super.myninja.ai/_assets/ninja-daytona-script.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="header-left">
+                <img src="/static/lologo8.png" alt="LOHA Logo" class="logo">
+                <div class="header-text">
+                    <h1>LOHA</h1>
+                    <p class="tagline">Personalised Advice for Dating and Relationships</p>
+                </div>
+            </div>
+            <div class="header-buttons">
+                <a href="https://www.loha.dating" class="header-btn primary">Visit LOHA</a>
+                <a href="https://www.loha.dating" class="header-btn secondary">Sign Up Free</a>
+            </div>
+        </header>
+
+        <div class="hero-section">
+            <div class="hero-image">
+                <img src="/static/lohafront1.png" alt="Romantic couple">
+            </div>
+            <div class="hero-content">
+                <h2>Discover Your Dating Archetype</h2>
+                <h2 style="font-size: 1.8rem;">Transform Your Love Life</h2>
+                <p>Based on 14 years of research into neurochemical types, LOHA provides personalized, science-based dating advice that actually works.</p>
+                <p>Understand your unique psychology, discover your archetype, and unlock the secrets to authentic connection and lasting attraction.</p>
+            </div>
+        </div>
+
+        <div class="features">
+            <div class="feature-card">
+                <div class="icon">🧠</div>
+                <h3>Neurochemical Insights</h3>
+                <p>Deep understanding of your unique neurochemical type and how it affects your dating behavior and attraction patterns.</p>
+            </div>
+            <div class="feature-card">
+                <div class="icon">💎</div>
+                <h3>8 Unique Archetypes</h3>
+                <p>From Mystic to King, each archetype has distinct characteristics, strengths, and dating superpowers.</p>
+            </div>
+            <div class="feature-card">
+                <div class="icon">💬</div>
+                <h3>Personalized Coaching</h3>
+                <p>Get tailored advice that speaks directly to your archetype - no generic one-size-fits-all nonsense.</p>
+            </div>
+        </div>
+
+        <div class="archetypes-section">
+            <h2>✨ The 8 Dating Archetypes</h2>
+            <p class="subtitle">Discover which archetype resonates with you</p>
+            
+            <div class="archetypes-grid">
+                <div class="archetype-token">
+                    <div class="token-icon">🔮</div>
+                    <h4>Mystic</h4>
+                    <p>Deep, soulful, intuitive</p>
+                </div>
+                <div class="archetype-token">
+                    <div class="token-icon">🌸</div>
+                    <h4>Maiden</h4>
+                    <p>Free-spirited, authentic, warm</p>
+                </div>
+                <div class="archetype-token">
+                    <div class="token-icon">👑</div>
+                    <h4>Queen</h4>
+                    <p>Sophisticated, discerning, refined</p>
+                </div>
+                <div class="archetype-token">
+                    <div class="token-icon">🏹</div>
+                    <h4>Huntress</h4>
+                    <p>Confident, ambitious, independent</p>
+                </div>
+                <div class="archetype-token">
+                    <div class="token-icon">✨</div>
+                    <h4>Magician</h4>
+                    <p>Intuitive, creative, insightful</p>
+                </div>
+                <div class="archetype-token">
+                    <div class="token-icon">⚔️</div>
+                    <h4>Knight</h4>
+                    <p>Chivalrous, protective, romantic</p>
+                </div>
+                <div class="archetype-token">
+                    <div class="token-icon">🛡️</div>
+                    <h4>Warrior</h4>
+                    <p>Confident, bold, accomplished</p>
+                </div>
+                <div class="archetype-token">
+                    <div class="token-icon">🦁</div>
+                    <h4>King</h4>
+                    <p>Natural leader, decisive, visionary</p>
+                </div>
+            </div>
+
+            <div class="archetypes-info">
+                <h3>Why Archetypes Matter</h3>
+                <p>Our archetype system combines your neurochemical type with your energy expression, helping you communicate better, attract the right matches, and create deeper, more meaningful connections.</p>
+            </div>
+        </div>
+
+        <div id="profileForm" class="form-section">
+            <h2>✨ Let's Discover Your Dating Archetype</h2>
+            
+            <div class="form-grid">
+                <div class="form-group">
+                    <label>Your Name</label>
+                    <input type="text" id="name" placeholder="Enter your name" required>
+                </div>
+                
+                <div class="form-group">
+                    <label>Date of Birth</label>
+                    <input type="date" id="dob" required>
+                </div>
+                
+                <div class="form-group">
+                    <label>Gender</label>
+                    <select id="gender" required>
+                        <option value="">Select gender</option>
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                        <option value="non-binary">Non-binary</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>🎯 What are your dating and relationship goals?</label>
+                <textarea id="goals" placeholder="Tell me what you're looking for - casual dating, serious relationship, marriage, or just having fun figuring it out..."></textarea>
+            </div>
+
+            <div class="form-group">
+                <label>🤔 What are your biggest dating challenges or issues?</label>
+                <textarea id="challenges" placeholder="First date nerves? Bad text game? Attracting the wrong type? Can't get past the talking stage? Lay it all out..."></textarea>
+            </div>
+
+            <div class="form-group">
+                <label>💪 What areas do you want to improve?</label>
+                <textarea id="improvements" placeholder="Confidence? Conversation skills? Physical chemistry? Online dating profile? Be honest with yourself..."></textarea>
+            </div>
+
+            <div class="relationship-entry">
+                <h3>💥 Important People in Your Life (Optional)</h3>
+                <p style="margin-bottom: 15px; opacity: 0.8;">Add up to 4 people to understand relationship dynamics</p>
+                
+                <div id="relationships">
+                    <!-- Person 1 -->
+                    <div class="form-grid" style="margin-bottom: 20px;">
+                        <div class="form-group">
+                            <label>Person 1 - Name</label>
+                            <input type="text" class="rel-name" placeholder="Name">
+                        </div>
+                        <div class="form-group">
+                            <label>Date of Birth</label>
+                            <input type="date" class="rel-dob">
+                        </div>
+                        <div class="form-group">
+                            <label>Gender</label>
+                            <select class="rel-gender">
+                                <option value="">Select</option>
+                                <option value="male">Male</option>
+                                <option value="female">Female</option>
+                                <option value="non-binary">Non-binary</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Relationship to You</label>
+                            <input type="text" class="rel-type" placeholder="Ex: ex, lover, friend, crush...">
+                        </div>
+                    </div>
+
+                    <!-- Person 2 -->
+                    <div class="form-grid" style="margin-bottom: 20px;">
+                        <div class="form-group">
+                            <label>Person 2 - Name</label>
+                            <input type="text" class="rel-name" placeholder="Name">
+                        </div>
+                        <div class="form-group">
+                            <label>Date of Birth</label>
+                            <input type="date" class="rel-dob">
+                        </div>
+                        <div class="form-group">
+                            <label>Gender</label>
+                            <select class="rel-gender">
+                                <option value="">Select</option>
+                                <option value="male">Male</option>
+                                <option value="female">Female</option>
+                                <option value="non-binary">Non-binary</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Relationship to You</label>
+                            <input type="text" class="rel-type" placeholder="Ex: ex, lover, friend, crush...">
+                        </div>
+                    </div>
+
+                    <!-- Person 3 -->
+                    <div class="form-grid" style="margin-bottom: 20px;">
+                        <div class="form-group">
+                            <label>Person 3 - Name</label>
+                            <input type="text" class="rel-name" placeholder="Name">
+                        </div>
+                        <div class="form-group">
+                            <label>Date of Birth</label>
+                            <input type="date" class="rel-dob">
+                        </div>
+                        <div class="form-group">
+                            <label>Gender</label>
+                            <select class="rel-gender">
+                                <option value="">Select</option>
+                                <option value="male">Male</option>
+                                <option value="female">Female</option>
+                                <option value="non-binary">Non-binary</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Relationship to You</label>
+                            <input type="text" class="rel-type" placeholder="Ex: ex, lover, friend, crush...">
+                        </div>
+                    </div>
+
+                    <!-- Person 4 -->
+                    <div class="form-grid" style="margin-bottom: 20px;">
+                        <div class="form-group">
+                            <label>Person 4 - Name</label>
+                            <input type="text" class="rel-name" placeholder="Name">
+                        </div>
+                        <div class="form-group">
+                            <label>Date of Birth</label>
+                            <input type="date" class="rel-dob">
+                        </div>
+                        <div class="form-group">
+                            <label>Gender</label>
+                            <select class="rel-gender">
+                                <option value="">Select</option>
+                                <option value="male">Male</option>
+                                <option value="female">Female</option>
+                                <option value="non-binary">Non-binary</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Relationship to You</label>
+                            <input type="text" class="rel-type" placeholder="Ex: ex, lover, friend, crush...">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <button class="submit-btn" onclick="submitProfile()">✨ Discover My Archetype</button>
+        </div>
+
+        <div id="chatSection" class="chat-section">
+            <div class="chat-header">
+                <h2>💬 Let's Talk Dating</h2>
+                <button class="header-btn secondary" onclick="resetChat()" style="margin: 0; padding: 10px 20px; font-size: 0.9rem;">New Chat</button>
+            </div>
+            <div id="chatContainer" class="chat-container">
+                <!-- Messages will appear here -->
+            </div>
+            <div class="chat-input">
+                <input type="text" id="messageInput" placeholder="Ask me anything about dating..." onkeypress="if(event.key === 'Enter') sendMessage()">
+                <button onclick="sendMessage()">Send</button>
+            </div>
+        </div>
+
+        <div class="testimonial">
+            <p>"Finally, a dating coach who gets it! LOHA helped me understand my archetype and suddenly everything clicked. I'm attracting the right people and having way more fun."</p>
+            <cite>- Sarah, The Queen</cite>
+        </div>
+
+        <footer>
+            <p>💖 LOHA - Love of Human Attraction | Based on "Magnetic" by Leo Kendrick</p>
+            <p>Your witty dating coach, keeping it real since 2025</p>
+        </footer>
+    </div>
+
+    <script>
+        let sessionId = '';
+        let userName = '';
+
+        function submitProfile() {
+            const name = document.getElementById('name').value;
+            const dob = document.getElementById('dob').value;
+            const gender = document.getElementById('gender').value;
+            const goals = document.getElementById('goals').value;
+            const challenges = document.getElementById('challenges').value;
+            const improvements = document.getElementById('improvements').value;
+
+            if (!name || !dob || !gender) {
+                alert('Please fill in your name, date of birth, and gender!');
+                return;
+            }
+
+            // Generate session ID
+            sessionId = Date.now().toString();
+            userName = name;
+
+            // Collect relationships
+            const relationships = [];
+            const relNames = document.querySelectorAll('.rel-name');
+            const relDobs = document.querySelectorAll('.rel-dob');
+            const relGenders = document.querySelectorAll('.rel-gender');
+            const relTypes = document.querySelectorAll('.rel-type');
+
+            for (let i = 0; i < relNames.length; i++) {
+                if (relNames[i].value && relDobs[i].value) {
+                    relationships.push({
+                        name: relNames[i].value,
+                        dob: relDobs[i].value,
+                        gender: relGenders[i].value,
+                        type: relTypes[i].value
+                    });
+                }
+            }
+
+            // Send to backend
+            fetch('/api/initialize', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    session_id: sessionId,
+                    name: name,
+                    dob: dob,
+                    gender: gender,
+                    goals: goals,
+                    challenges: challenges,
+                    improvements: improvements,
+                    relationships: relationships
+                })
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    document.getElementById('profileForm').style.display = 'none';
+                    document.getElementById('chatSection').style.display = 'block';
+                    displayMessage('assistant', data.message);
+                } else {
+                    alert('Error: ' + data.error);
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('Something went wrong. Please try again.');
+            });
+        }
+
+        function sendMessage() {
+            const input = document.getElementById('messageInput');
+            const message = input.value.trim();
+
+            if (!message) return;
+
+            // Display user message
+            displayMessage('user', message);
+            input.value = '';
+
+            // Show typing indicator
+            showTypingIndicator();
+
+            // Send to backend
+            fetch('/api/chat', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    session_id: sessionId,
+                    message: message
+                })
+            })
+            .then(response => response.json())
+            .then(data => {
+                hideTypingIndicator();
+                if (data.success) {
+                    displayMessage('assistant', data.message);
+                } else {
+                    displayMessage('assistant', 'Sorry, something went wrong. Please try again.');
+                }
+            })
+            .catch(error => {
+                hideTypingIndicator();
+                console.error('Error:', error);
+                displayMessage('assistant', 'Sorry, something went wrong. Please try again.');
+            });
+        }
+
+        function displayMessage(type, content) {
+            const container = document.getElementById('chatContainer');
+            const messageDiv = document.createElement('div');
+            messageDiv.className = `message ${type}`;
+            messageDiv.innerHTML = `<div class="message-content">${content.replace(/\n/g, '<br>')}</div>`;
+            container.appendChild(messageDiv);
+            container.scrollTop = container.scrollHeight;
+        }
+
+        function showTypingIndicator() {
+            const container = document.getElementById('chatContainer');
+            const indicator = document.createElement('div');
+            indicator.id = 'typingIndicator';
+            indicator.className = 'message assistant';
+            indicator.innerHTML = `
+                <div class="typing-indicator">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            `;
+            container.appendChild(indicator);
+            container.scrollTop = container.scrollHeight;
+        }
+
+        function hideTypingIndicator() {
+            const indicator = document.getElementById('typingIndicator');
+            if (indicator) {
+                indicator.remove();
+            }
+        }
+
+        function resetChat() {
+            const container = document.getElementById('chatContainer');
+            container.innerHTML = '';
+        }
+    </script>
+</body>
+</html>

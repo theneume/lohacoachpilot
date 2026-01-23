@@ -1,0 +1,470 @@
+{
+  "faq_categories": {
+    "getting_started": {
+      "what_makes_loha_different": {
+        "question": "What makes Loha different from other dating apps?",
+        "answer": "Loha represents a complete paradigm shift in online dating. While traditional apps use superficial matching algorithms designed for addiction rather than connection, Loha is built on 14 years of research into neurochemical compatibility and attraction patterns. We use Causal AI to understand the fundamental neurological patterns that actually drive sustainable attraction, not just superficial similarities.",
+        "keywords": ["different", "unique", "special", "why loha", "compared to", "versus", "better than"],
+        "elaboration_points": [
+          "Traditional apps match based on superficial similarities like shared interests",
+          "Loha matches based on neurochemical compatibility and attraction patterns",
+          "Focus on sustainable attraction rather than quick swipes",
+          "14 years of research backing the system"
+        ]
+      },
+      "how_matching_works": {
+        "question": "How does the Loha matching system work?",
+        "answer": "Our revolutionary system analyzes your neurochemical blueprint—the unique balance of dopamine and serotonin that governs your attraction patterns, communication style, and relationship needs. Through subtle assessment questions and pattern recognition, we identify your dating archetype and find complementary patterns that create lasting chemistry.",
+        "keywords": ["matching", "algorithm", "how it works", "system", "compatibility"],
+        "elaboration_points": [
+          "Analyzes neurochemical blueprint (dopamine and serotonin balance)",
+          "Identifies dating archetype through assessment",
+          "Finds complementary patterns for lasting chemistry",
+          "Science-based approach leads to higher connection quality"
+        ]
+      },
+      "eight_archetypes": {
+        "question": "What are the eight dating archetypes?",
+        "answer": "Based on our research, we've identified eight distinct dating archetypes: The Maiden (authenticity embodied), The Knight (adventurous protector), The Huntress (strategic passion-seeker), The Warrior (fierce protector), The Mystic (deep spiritual connector), The Magician (transformative visionary), The Queen (regal partner and leader), and The King (noble visionary and protector). Each represents a specific combination of neurological patterns.",
+        "keywords": ["archetypes", "types", "eight", "categories", "personalities"],
+        "elaboration_points": [
+          "Eight distinct archetypes based on neurochemical patterns",
+          "Each archetype has unique approach to love and intimacy",
+          "Archetypes govern attraction patterns and communication style",
+          "Understanding your archetype is like having an owner's manual for your romantic self"
+        ]
+      },
+      "relationship_types": {
+        "question": "Is Loha only for serious relationships?",
+        "answer": "Loha welcomes all open-minded people seeking authentic connection, whether you're looking for traditional relationships, ethical non-monogamy, open relationships, casual connections, or something unique. Understanding your archetype and attraction patterns serves all relationship types by creating more conscious, honest, and fulfilling connections.",
+        "keywords": ["serious", "casual", "relationship type", "monogamy", "open", "polyamory"],
+        "elaboration_points": [
+          "Welcomes all relationship structures",
+          "Focus is on authentic connection regardless of format",
+          "Archetype awareness helps all relationship types",
+          "Promotes conscious and honest connections"
+        ]
+      },
+      "creating_profile": {
+        "question": "How do I create my Loha profile?",
+        "answer": "Creating your profile is straightforward and designed to reveal your authentic patterns. You'll provide basic information (age, career, ethnicity), answer assessment questions that reveal your neurochemical patterns, upload recent photos, and write a bio focused on values and personality. The entire process takes less than 5 minutes.",
+        "keywords": ["profile", "sign up", "create account", "get started", "join"],
+        "elaboration_points": [
+          "Quick 5-minute process",
+          "Focus on authentic patterns not perfect facade",
+          "Assessment questions reveal neurochemical patterns",
+          "Bio should focus on values and personality"
+        ]
+      }
+    },
+    "archetypes_compatibility": {
+      "archetype_definition": {
+        "question": "What is a dating archetype?",
+        "answer": "Your dating archetype is your fundamental relationship operating system based on your neurochemical makeup. It governs how you experience attraction, communicate in relationships, handle conflict, and express intimacy. Understanding your archetype is like having the owner's manual for your romantic self.",
+        "keywords": ["archetype", "what is", "definition", "explain", "operating system"],
+        "elaboration_points": [
+          "Based on neurochemical makeup",
+          "Governs attraction, communication, conflict, and intimacy",
+          "Explains your patterns and highlights strengths",
+          "Reveals challenges and provides strategies"
+        ]
+      },
+      "archetype_accuracy": {
+        "question": "How accurate is the archetype identification?",
+        "answer": "Our archetype identification system has been refined through 14 years of research and thousands of relationship analyses. It uses sophisticated pattern recognition to identify your fundamental neurological patterns with over 90% accuracy. Unlike personality tests that rely on self-reporting, our system analyzes behavioral tendencies, stress responses, pleasure triggers, and relationship approaches.",
+        "keywords": ["accurate", "accuracy", "reliable", "trust", "valid"],
+        "elaboration_points": [
+          "14 years of research and refinement",
+          "Over 90% accuracy rate",
+          "Analyzes behavior not just self-reporting",
+          "Looks at stress responses and pleasure triggers"
+        ]
+      },
+      "multiple_archetypes": {
+        "question": "Can I be more than one archetype?",
+        "answer": "While everyone has a primary dominant archetype, most people express secondary traits from one or two other archetypes. Our system recognizes these nuances and provides insights into how your dominant archetype interacts with your secondary tendencies. This complexity is why personalized guidance through Deepsyke AI is so valuable.",
+        "keywords": ["multiple", "more than one", "secondary", "combination", "mixed"],
+        "elaboration_points": [
+          "Primary dominant archetype with secondary traits",
+          "System recognizes nuances and complexity",
+          "Deepsyke AI helps navigate interplay of traits",
+          "Most people have 1-2 secondary influences"
+        ]
+      },
+      "compatibility_matching": {
+        "question": "What archetype is most compatible with mine?",
+        "answer": "Compatibility is based on complementary polarity rather than similarity. The most sustainable attractions occur between archetypes that create energetic completion: Knight + Maiden, Huntress + Magician, King + Mystic, and Warrior + Queen. However, any archetype combination can work with conscious awareness and the right strategies.",
+        "keywords": ["compatible", "match", "best for", "works with", "pairs with"],
+        "elaboration_points": [
+          "Based on complementary polarity not similarity",
+          "Natural pairings: Knight+Maiden, Huntress+Magician, King+Mystic, Warrior+Queen",
+          "Any combination can work with awareness",
+          "System helps understand both natural compatibility and how to make any combination successful"
+        ]
+      },
+      "archetypes_gender": {
+        "question": "Do archetypes relate to gender?",
+        "answer": "No, archetypes are not gender-specific. We've found all eight archetypes expressed across all gender identities. While certain archetypes may align with traditional gender expressions, anyone can embody any archetype based on their neurological patterns. Loha is inclusive and honors authentic expression regardless of gender identity.",
+        "keywords": ["gender", "male", "female", "non-binary", "gender identity"],
+        "elaboration_points": [
+          "Not gender-specific",
+          "All archetypes found across all gender identities",
+          "Based on neurological patterns not gender",
+          "Loha is fully inclusive"
+        ]
+      }
+    },
+    "deepsyke_ai": {
+      "what_is_deepsyke": {
+        "question": "What is Deepsyke AI?",
+        "answer": "Deepsyke AI is Loha's revolutionary personal relationship coach, exclusive to our platform. Unlike generic chatbots, Deepsyke uses our research-based understanding of attraction patterns to provide highly personalized guidance. It can identify your archetype, analyze compatibility, suggest communication strategies, and provide insights based on your specific neurological signature.",
+        "keywords": ["deepsyke", "ai coach", "chatbot", "assistant"],
+        "elaboration_points": [
+          "Personal relationship coach exclusive to Loha",
+          "Uses research-based understanding of attraction",
+          "Provides personalized guidance",
+          "Can identify archetype and analyze compatibility"
+        ]
+      },
+      "accessing_deepsyke": {
+        "question": "How do I access Deepsyke?",
+        "answer": "There are two ways - one is through the AI coach you're using now and second is through the Loha website itself. When you've signed up, simply browse profiles and find a Deepsyke AI coach (eg. Carmen, Eli, Sophie or Greg) in featured members or visit your dashboard to start a conversation. Deepsyke is available 24/7 and included in all Loha memberships.",
+        "keywords": ["access", "use", "find", "where", "how to use"],
+        "elaboration_points": [
+          "Available through this coach and Loha website",
+          "Find coaches in featured members",
+          "Available 24/7",
+          "Included in all memberships"
+        ]
+      },
+      "deepsyke_questions": {
+        "question": "What kind of questions can I ask Deepsyke?",
+        "answer": "You can ask anything related to dating, relationships, and personal growth through the archetype lens. Popular questions include: 'What is my archetype?', 'How compatible am I with someone?', 'What's the best way to approach someone?', 'Why do I keep attracting the same type?', and 'How can I improve my communication?'",
+        "keywords": ["ask", "questions", "help with", "topics"],
+        "elaboration_points": [
+          "Anything related to dating and relationships",
+          "Archetype identification and compatibility",
+          "Communication strategies",
+          "Pattern analysis and personal growth"
+        ]
+      },
+      "deepsyke_privacy": {
+        "question": "Is my conversation with Deepsyke private?",
+        "answer": "Yes, absolutely. Your conversations with Deepsyke are completely confidential and never shared with other users or used for advertising. We prioritize your privacy and emotional safety above all else. Deepsyke's learning is used only to provide better guidance for you personally.",
+        "keywords": ["private", "confidential", "privacy", "secure", "safe"],
+        "elaboration_points": [
+          "Completely confidential",
+          "Never shared with others",
+          "Not used for advertising",
+          "Learning used only for personal guidance"
+        ]
+      },
+      "deepsyke_learning": {
+        "question": "How does Deepsyke learn about me?",
+        "answer": "Deepsyke uses an objective pattern based on your profile data (such as DOB and gender) along with broader pattern recognition to understand your archetype through your assessment responses, communication style, and the questions you ask. Each interaction helps it refine its understanding and provide more personalized guidance.",
+        "keywords": ["learn", "understand", "know me", "personalize"],
+        "elaboration_points": [
+          "Uses profile data and pattern recognition",
+          "Analyzes communication style and questions",
+          "Continuous learning process",
+          "Gets to know you better over time"
+        ]
+      }
+    },
+    "membership_pricing": {
+      "free_membership": {
+        "question": "Is Loha free to join?",
+        "answer": "Loha offers a free tier that allows you to create a profile, take the archetype assessment, receive basic compatibility insights, and browse potential matches. You can use the site free indefinitely. The only catch is you can only message other free members, not premium members. You also cannot do video/audio calls, use the inbound AI coach, browse incognito or see who liked you.",
+        "keywords": ["free", "cost", "price", "trial"],
+        "elaboration_points": [
+          "Free tier available indefinitely",
+          "Can create profile and take assessment",
+          "Can message other free members",
+          "Premium needed for full messaging and features"
+        ]
+      },
+      "premium_features": {
+        "question": "What does premium membership include?",
+        "answer": "Premium membership includes unlimited messaging with all members, unlimited video and audio calls, priority matching, unlimited Deepsyke AI conversations, profile optimization suggestions, and access to exclusive events and workshops. Premium members also receive enhanced privacy features and priority customer support.",
+        "keywords": ["premium", "paid", "subscription", "features", "benefits"],
+        "elaboration_points": [
+          "Unlimited messaging with all members",
+          "Video and audio calls",
+          "Priority matching",
+          "Unlimited AI conversations",
+          "Exclusive events and enhanced privacy"
+        ]
+      },
+      "premium_cost": {
+        "question": "How much does premium membership cost?",
+        "answer": "We run on a credit based system where you buy credits in packages. 10 credits equals $1 AUD. You can purchase premium membership with credits for various durations: one day, one week, a month, 6 months or a year. One week's premium membership costs 100 credits ($10 AUD).",
+        "keywords": ["cost", "price", "how much", "payment", "subscription"],
+        "elaboration_points": [
+          "Credit-based system (10 credits = $1 AUD)",
+          "Flexible duration options",
+          "One week = 100 credits ($10 AUD)",
+          "Can choose from day to year subscriptions"
+        ]
+      },
+      "cancellation": {
+        "question": "Can I cancel my membership anytime?",
+        "answer": "Yes, you can cancel your membership at any time without penalty. If you cancel, your premium benefits continue until the end of your current billing period, after which you'll revert to free membership. You can reactivate premium membership whenever you choose.",
+        "keywords": ["cancel", "stop", "end", "quit"],
+        "elaboration_points": [
+          "Cancel anytime without penalty",
+          "Benefits continue until period ends",
+          "Revert to free membership",
+          "Can reactivate anytime"
+        ]
+      },
+      "refunds": {
+        "question": "Do you offer refunds?",
+        "answer": "Purchasing credits is non-refundable however if you think there has been a mistake or an oversight please let us know via our support email and we can organize a refund for legitimate reasons. Changing one's mind however is not a legitimate reason.",
+        "keywords": ["refund", "money back", "return"],
+        "elaboration_points": [
+          "Credits are non-refundable",
+          "Exceptions for mistakes or oversights",
+          "Contact support for legitimate issues",
+          "Changing mind not eligible"
+        ]
+      }
+    },
+    "safety_privacy": {
+      "identity_verification": {
+        "question": "How does Loha verify user identities?",
+        "answer": "Please contact support for verification steps.",
+        "keywords": ["verify", "verification", "real", "authentic", "fake"],
+        "elaboration_points": [
+          "Contact support for details",
+          "Verification process in place",
+          "Ensures authentic profiles"
+        ]
+      },
+      "inappropriate_behavior": {
+        "question": "How does Loha handle inappropriate behavior?",
+        "answer": "Loha maintains zero tolerance for abuse, harassment, or inappropriate behavior. We use AI monitoring combined with human moderation to identify and remove problematic members quickly. Members can report issues 24/7, and our safety team responds promptly to all concerns. We also provide extensive safety guidelines and blocking features.",
+        "keywords": ["harassment", "abuse", "inappropriate", "report", "safety"],
+        "elaboration_points": [
+          "Zero tolerance policy",
+          "AI monitoring plus human moderation",
+          "24/7 reporting available",
+          "Quick response to concerns"
+        ]
+      },
+      "data_security": {
+        "question": "Is my personal information secure?",
+        "answer": "We use high level encryption to protect your personal information and never share your data with third parties for advertising purposes. Your location is approximate rather than exact, and you control what information is visible on your profile. We comply with all applicable privacy regulations and regularly audit our security systems.",
+        "keywords": ["secure", "security", "data", "privacy", "safe"],
+        "elaboration_points": [
+          "High level encryption",
+          "No third-party data sharing",
+          "Approximate location only",
+          "Regular security audits"
+        ]
+      },
+      "anonymous_browsing": {
+        "question": "Can I browse anonymously?",
+        "answer": "Yes, premium members can use incognito mode to browse profiles without appearing in other members' visitor lists. You control your visibility and can adjust privacy settings at any time. Free members are visible to others when they view profiles.",
+        "keywords": ["anonymous", "incognito", "invisible", "hidden"],
+        "elaboration_points": [
+          "Incognito mode for premium members",
+          "Control your visibility",
+          "Adjustable privacy settings",
+          "Free members visible when browsing"
+        ]
+      },
+      "misrepresentation": {
+        "question": "What if I encounter someone who misrepresents themselves?",
+        "answer": "We take misrepresentation seriously and have a strict policy against fake profiles and catfishing. Report any suspicious behavior immediately, and our verification team will investigate. We permanently ban members who deliberately misrepresent themselves and may implement additional verification requirements when necessary.",
+        "keywords": ["fake", "catfish", "lying", "misrepresent", "fraud"],
+        "elaboration_points": [
+          "Strict anti-catfishing policy",
+          "Report suspicious behavior",
+          "Verification team investigates",
+          "Permanent bans for misrepresentation"
+        ]
+      }
+    },
+    "relationship_success": {
+      "success_rates": {
+        "question": "How successful are Loha relationships?",
+        "answer": "Based on our research, Loha users represent a shift away from algorithm-based swiping and toward conscious meaningful connections. People who have values of honesty, integrity, intentional matching, communication and respect report 3x higher relationship satisfaction and 2.5x longer relationship duration compared to traditional dating apps. Members who use our system for 3+ months report improvements in their dating experience.",
+        "keywords": ["success", "results", "work", "effective"],
+        "elaboration_points": [
+          "3x higher relationship satisfaction",
+          "2.5x longer relationship duration",
+          "Focus on conscious connections",
+          "Improvements seen within 3 months"
+        ]
+      },
+      "time_to_match": {
+        "question": "How long does it typically take to find a match?",
+        "answer": "This varies by individual, but most members find compatible matches within their first 2 weeks of premium membership. Members who engage with the Loha Dating Coach and Deepsyke AI and apply archetype awareness typically see results faster than those who don't. Remember, quality connections often take time to develop.",
+        "keywords": ["how long", "time", "when", "quickly"],
+        "elaboration_points": [
+          "Most find matches within 2 weeks",
+          "Faster results with coach engagement",
+          "Quality takes time",
+          "Archetype awareness accelerates success"
+        ]
+      },
+      "coach_benefits": {
+        "question": "How can using the Loha Dating coach actually help me on the Loha dating site?",
+        "answer": "The purpose of using the Loha AI coach is to prime you for readiness to join the Loha dating community. Using this chat first to find out more about your primary archetypes and dating personality, your current relationship dynamics, and your dating goals helps you develop a much higher level of preparation. This means you can refine your bio, profile or photos and get more of a clue as to how to recognize what you're really looking for. It will also give you better ideas about how to start and maintain conversations, build intrigue and attraction and organize real life dates. In short, using a combination of the Loha coach and the Loha site will turbo charge your chances of dating and relationship success.",
+        "keywords": ["coach help", "preparation", "benefits", "why use coach"],
+        "elaboration_points": [
+          "Primes you for dating community",
+          "Helps understand your archetypes",
+          "Refine profile and bio",
+          "Better conversation skills",
+          "Turbo charges success when combined with site"
+        ]
+      },
+      "not_getting_results": {
+        "question": "What if I'm not getting the results I want?",
+        "answer": "We offer comprehensive support through Deepsyke AI, profile optimization suggestions, communication coaching, and even one-on-one coaching sessions for premium members. Many members find that applying archetype awareness dramatically improves their results within weeks. We're committed to your success and provide multiple resources to help you achieve your relationship goals.",
+        "keywords": ["not working", "no results", "struggling", "help"],
+        "elaboration_points": [
+          "Multiple support resources available",
+          "Profile optimization help",
+          "Communication coaching",
+          "One-on-one sessions for premium members"
+        ]
+      },
+      "existing_relationships": {
+        "question": "Can Loha help if I'm already in a relationship?",
+        "answer": "Absolutely! Many couples use Loha's archetype system to understand each other better, improve communication, and restore polarity in long-term relationships. Deepsyke provides valuable insights for navigating challenges and maintaining attraction over time. We also offer couples coaching and workshops specifically for existing relationships.",
+        "keywords": ["relationship", "couple", "partner", "existing"],
+        "elaboration_points": [
+          "Helps understand partner better",
+          "Improves communication",
+          "Restores polarity",
+          "Couples coaching available"
+        ]
+      },
+      "skepticism": {
+        "question": "What if I don't believe in archetypes or science-based dating?",
+        "answer": "We understand that our approach may be new to you. That's why we offer the AI coach and a free tier on Loha that allows you to experience the system without commitment. Many skeptics become converts when they see how accurately the archetype descriptions match their experience and how the insights transform their dating results. The proof is in the improved connection quality and relationship satisfaction.",
+        "keywords": ["skeptical", "don't believe", "doubt", "unsure"],
+        "elaboration_points": [
+          "Free tier to try without commitment",
+          "Many skeptics become converts",
+          "Accuracy of descriptions convinces people",
+          "Proof is in the results"
+        ]
+      }
+    },
+    "technical_support": {
+      "device_compatibility": {
+        "question": "What devices does Loha work on?",
+        "answer": "Loha is available as a fully functional web browser version with mobile app in development currently. Your account syncs seamlessly across all devices, so you can switch between phone, tablet, and computer without losing any data or conversations.",
+        "keywords": ["devices", "phone", "mobile", "app", "browser"],
+        "elaboration_points": [
+          "Web browser version available now",
+          "Mobile app in development",
+          "Seamless sync across devices",
+          "No data loss when switching"
+        ]
+      },
+      "technical_issues": {
+        "question": "How do I report technical issues?",
+        "answer": "Contact our technical support team through the app's help section or email support@loha.dating. We typically respond within 24 hours and prioritize urgent issues. Premium members receive priority support with faster response times.",
+        "keywords": ["problem", "bug", "issue", "error", "help"],
+        "elaboration_points": [
+          "Contact via help section or email",
+          "24-hour response time",
+          "Priority support for premium members",
+          "Urgent issues prioritized"
+        ]
+      },
+      "international_use": {
+        "question": "Can I use Loha internationally?",
+        "answer": "Yes, Loha is available worldwide with members in many countries. Our matching system works across cultures and borders, focusing on fundamental human patterns rather than cultural specifics.",
+        "keywords": ["international", "worldwide", "global", "countries"],
+        "elaboration_points": [
+          "Available worldwide",
+          "Members in many countries",
+          "Works across cultures",
+          "Focus on universal patterns"
+        ]
+      },
+      "password_reset": {
+        "question": "What if I forget my password?",
+        "answer": "Use the 'Forgot Password' link on the login page to reset your password securely. We'll send a reset link to your registered email.",
+        "keywords": ["password", "forgot", "reset", "login"],
+        "elaboration_points": [
+          "Use forgot password link",
+          "Reset link sent to email",
+          "Secure process"
+        ]
+      },
+      "delete_account": {
+        "question": "How do I delete my account?",
+        "answer": "You can delete your account at any time through your account settings. Deleted accounts cannot be recovered, so we recommend deactivating temporarily if you're considering returning. We'll remove all your personal information from our servers within 30 days of account deletion.",
+        "keywords": ["delete", "remove", "close account", "deactivate"],
+        "elaboration_points": [
+          "Delete through account settings",
+          "Cannot be recovered",
+          "Consider temporary deactivation",
+          "Data removed within 30 days"
+        ]
+      }
+    },
+    "community_events": {
+      "in_person_events": {
+        "question": "Does Loha offer in-person events?",
+        "answer": "Yes, we host regular virtual and in-person events for members, including archetype workshops, communication seminars, polarity retreats, and social mixers. Premium members receive discounted rates and early access to event registration. Events are a great way to meet other conscious singles and deepen your understanding of the archetype system.",
+        "keywords": ["events", "meetups", "workshops", "gatherings"],
+        "elaboration_points": [
+          "Regular virtual and in-person events",
+          "Workshops and seminars",
+          "Premium member discounts",
+          "Meet conscious singles"
+        ]
+      },
+      "community_connections": {
+        "question": "Can I connect with other Loha members outside of dating?",
+        "answer": "Absolutely! Many members form friendships and professional connections through Loha. We offer community forums, discussion groups, and social events focused on personal growth and conscious connection. The Loha community extends beyond romantic relationships into a network of like-minded individuals.",
+        "keywords": ["friends", "community", "network", "connections"],
+        "elaboration_points": [
+          "Friendships and professional connections",
+          "Community forums and groups",
+          "Social events",
+          "Network of like-minded people"
+        ]
+      },
+      "success_stories": {
+        "question": "How can I share my success story?",
+        "answer": "We love hearing from members who have found meaningful connections through Loha! Share your story through the app or email success@loha.dating. Selected stories may be featured in our marketing materials (with your permission and anonymized if preferred). Success stories help others understand the transformative potential of archetype-aware dating.",
+        "keywords": ["success story", "testimonial", "share experience"],
+        "elaboration_points": [
+          "Share via app or email",
+          "May be featured with permission",
+          "Can be anonymized",
+          "Helps inspire others"
+        ]
+      }
+    }
+  },
+  "loha_site_promotion": {
+    "purpose": "Subtle, natural mentions of Loha dating site to encourage user imagination about applying coaching insights",
+    "frequency": "Every 8-10 messages",
+    "approach": "Non-pushy, contextual, focused on how coaching prepares them for success",
+    "key_messages": [
+      "The insights you're gaining here will translate directly to success on Loha",
+      "Understanding your archetype now means you'll know exactly what to look for on Loha",
+      "This preparation is what makes Loha members so much more successful than traditional dating apps",
+      "When you're ready, Loha gives you a place to apply everything you're learning here",
+      "The combination of this coaching and Loha's matching system is incredibly powerful"
+    ],
+    "integration_style": "Background reference, not primary focus",
+    "tone": "Encouraging and possibility-focused, never salesy"
+  },
+  "usage_guidelines": {
+    "primary_function": "Full-service dating coach - this is the main purpose",
+    "secondary_function": "FAQ reference and subtle Loha site awareness",
+    "balance": "FAQ info runs in background, never overshadows coaching",
+    "faq_usage": "Use for direct answers or elaborate into general conversation",
+    "site_mentions": "Natural, contextual, every 8-10 messages, focused on user success"
+  }
+}

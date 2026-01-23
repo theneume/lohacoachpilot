@@ -3,10 +3,10 @@ import json
 import os
 from datetime import datetime
 import random
-from flask import Flask, render_template, request, jsonify
+from flask import Flask, render_template, request, jsonify, send_from_directory
 from natal_calculator import calculate_natal_type_from_dob
 
-app = Flask(__name__)
+app = Flask(__name__, static_folder='static', static_url_path='/static')
 
 # Load configuration
 GEMINI_API_KEY = os.environ.get('GEMINI_API_KEY', 'AIzaSyC1DgG1w7dm8fbZZ_LlAwhxpMSdNTJJl1Y')
@@ -18,12 +18,18 @@ with open('deepsyke_core_rag.json', 'r') as f:
 with open('dating_coach_rag.json', 'r') as f:
     DATING_COACH = json.load(f)
 
+with open('loha_faq_rag.json', 'r') as f:
+    LOHA_FAQ = json.load(f)
+
 # Load system prompt
 with open('ai_system_prompt.txt', 'r') as f:
     SYSTEM_PROMPT_TEMPLATE = f.read()
 
 # Store conversations in memory
 conversations = {}
+
+# Track message counts for Loha site mentions
+message_counters = {}
 
 # Cultural avatars for dating coach (celebrities, socialites, fun people)
 DATING_CAS = {
@@ -140,14 +146,14 @@ def create_contextual_greeting(profile):
     
     return greeting
 
-def build_dating_system_prompt(profile, conversation_history):
+def build_dating_system_prompt(profile, conversation_history, should_mention_loha=False):
     """Build the complete dating coach system prompt"""
     natal_type = profile['natal_type']
     gender = profile['gender']
     archetype, description, nicknames = get_archetype(natal_type, gender)
     
     # Get Deepsyke type details (for AI's knowledge, not for user-facing content)
-    type_data = DEEPSYKE_CORE['affinity_zones'].get(natal_type, {})
+    type_data = DEEPSYKE_CORE.get('affinity_zones', {}).get(natal_type, {})
     
     # Build user info section
     user_info = f"\n# USER INFORMATION\n"
@@ -226,8 +232,36 @@ def build_dating_system_prompt(profile, conversation_history):
     system_prompt = system_prompt.replace('{archetype}', archetype)
     system_prompt = system_prompt.replace('{nickname}', nicknames[0])
     
+    # Add FAQ context
+    faq_context = "\n\n# LOHA FAQ KNOWLEDGE BASE\n"
+    faq_context += "You have access to comprehensive FAQ information about Loha dating site and this coaching service. "
+    faq_context += "Use this information to answer user questions naturally when relevant. The FAQ covers:\n"
+    faq_context += "- Getting started with Loha\n"
+    faq_context += "- Archetypes and compatibility\n"
+    faq_context += "- Deepsyke AI features\n"
+    faq_context += "- Membership and pricing\n"
+    faq_context += "- Safety and privacy\n"
+    faq_context += "- Relationship success tips\n"
+    faq_context += "- Technical support\n"
+    faq_context += "- Community and events\n\n"
+    faq_context += "IMPORTANT: This coaching service is your PRIMARY function. The FAQ information runs in the background. "
+    faq_context += "Never let FAQ responses overshadow your role as a dating coach. Use FAQ info naturally when relevant.\n\n"
+    
+    # Add Loha site mention instruction if appropriate
+    loha_mention = ""
+    if should_mention_loha:
+        loha_mention = "\n\n# LOHA SITE MENTION\n"
+        loha_mention += "In this response, naturally weave in a brief, non-pushy mention of how the insights from this coaching "
+        loha_mention += "can translate to success on the Loha dating site (loha.dating). Focus on:\n"
+        loha_mention += "- How understanding their archetype prepares them for better matches\n"
+        loha_mention += "- How this coaching helps them know what to look for\n"
+        loha_mention += "- How the combination of coaching + Loha's matching creates powerful results\n"
+        loha_mention += "- Encouraging them to imagine applying these insights in real dating scenarios\n\n"
+        loha_mention += "Keep it brief (1-2 sentences), natural, and focused on their success. Never be salesy or pushy. "
+        loha_mention += "Make it feel like a natural extension of the coaching conversation.\n"
+    
     # Combine all parts
-    full_prompt = system_prompt + "\n\n" + user_info + "\n\n" + history_text + "\n\n# USER'S MESSAGE:\n{user_message}"
+    full_prompt = system_prompt + "\n\n" + user_info + "\n\n" + faq_context + loha_mention + history_text + "\n\n# USER'S MESSAGE:\n{user_message}"
     
     return full_prompt
 
@@ -356,6 +390,23 @@ def call_gemini_api(system_prompt, user_message, max_retries=2):
 def index():
     return render_template('index.html')
 
+@app.route('/static/<path:filename>')
+def serve_static(filename):
+    return send_from_directory('static', filename)
+
+# Explicit routes for images
+@app.route('/static/lologo8.png')
+def serve_logo():
+    return send_from_directory('static', 'lologo8.png')
+
+@app.route('/static/lohafront1.png')
+def serve_hero():
+    return send_from_directory('static', 'lohafront1.png')
+
+@app.route('/static/archtokens.png')
+def serve_archetypes():
+    return send_from_directory('static', 'archtokens.png')
+
 @app.route('/api/health')
 def health():
     return jsonify({'status': 'healthy', 'service': 'LOHA Dating Coach'})
@@ -441,17 +492,39 @@ def chat():
         session = conversations[session_id]
         profile = session['profile']
         
+        # Initialize message counter for this session if not exists
+        if session_id not in message_counters:
+            message_counters[session_id] = 0
+        
+        # Increment message counter
+        message_counters[session_id] += 1
+        
         # Add user message to history
         session['history'].append({'role': 'user', 'content': user_message})
         
-        # Build system prompt
-        system_prompt = build_dating_system_prompt(profile, session['history'])
+        # Build system prompt (with Loha mention flag if appropriate)
+        should_mention_loha = message_counters[session_id] % 9 == 0  # Every 9 messages (roughly 8-10 range)
+        system_prompt = build_dating_system_prompt(profile, session['history'], should_mention_loha)
         
         # Call AI (now with retry logic)
-        response = call_gemini_api(system_prompt, user_message)
+        try:
+            response = call_gemini_api(system_prompt, user_message)
+        except Exception as api_error:
+            print(f"API Error for session {session_id}: {api_error}")
+            import traceback
+            traceback.print_exc()
+            return jsonify({
+                'success': False,
+                'error': 'AI service temporarily unavailable',
+                'user_friendly': "I'm having a moment. Let me try that again - could you send your message once more?"
+            }), 503
         
         # Add response to history
         session['history'].append({'role': 'assistant', 'content': response})
+        
+        # Keep history manageable (last 30 messages max)
+        if len(session['history']) > 30:
+            session['history'] = session['history'][-30:]
         
         return jsonify({
             'success': True,

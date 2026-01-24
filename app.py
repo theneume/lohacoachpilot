@@ -5,6 +5,12 @@ from datetime import datetime
 import random
 from flask import Flask, render_template, request, jsonify, send_from_directory
 from natal_calculator import calculate_natal_type_from_dob
+from polar_integration import (
+    check_payment_status, 
+    mark_session_paid, 
+    create_polar_checkout,
+    handle_polar_webhook
+)
 
 app = Flask(__name__, static_folder='static', static_url_path='/static')
 
@@ -21,6 +27,9 @@ with open('dating_coach_rag.json', 'r') as f:
 with open('loha_faq_rag.json', 'r') as f:
     LOHA_FAQ = json.load(f)
 
+with open('archetype_variations.json', 'r') as f:
+    ARCHETYPE_VARIATIONS = json.load(f)
+
 # Load system prompt
 with open('ai_system_prompt.txt', 'r') as f:
     SYSTEM_PROMPT_TEMPLATE = f.read()
@@ -30,6 +39,9 @@ conversations = {}
 
 # Track message counts for Loha site mentions
 message_counters = {}
+
+# Paywall configuration
+PAYWALL_MESSAGE_LIMIT = 6  # Trigger paywall after 6 messages
 
 # Cultural avatars for dating coach (celebrities, socialites, fun people)
 DATING_CAS = {
@@ -146,7 +158,7 @@ def create_contextual_greeting(profile):
     
     return greeting
 
-def build_dating_system_prompt(profile, conversation_history, should_mention_loha=False):
+def build_dating_system_prompt(profile, conversation_history, should_mention_loha=False, should_use_ca=False, session_id=None):
     """Build the complete dating coach system prompt"""
     natal_type = profile['natal_type']
     gender = profile['gender']
@@ -179,9 +191,33 @@ def build_dating_system_prompt(profile, conversation_history, should_mention_loh
             rel_archetype, _, rel_nicknames = get_archetype(rel_type, rel.get('gender', 'male'))
             user_info += f"- {rel['name']} ({rel.get('gender', '')}): {rel.get('type', 'unknown')} - {rel_archetype} archetype\n"
     
-    # Add archetype-specific guidance
+    # Add archetype-specific guidance with variations to avoid repetition
     user_info += f"\n# YOUR ARCHETYPE: {archetype.upper()}\n"
-    user_info += f"{description}\n"
+    
+    # Use random variations for archetype descriptions to prevent repetition
+    archetype_lower = archetype.lower()
+    if archetype_lower in ARCHETYPE_VARIATIONS:
+        variations = ARCHETYPE_VARIATIONS[archetype_lower]
+        
+        # Pick random variation for each element
+        import random
+        neuro_profile = random.choice(variations.get('neuro_profiles', [description]))
+        serotonin_desc = random.choice(variations.get('serotonin_variations', ['']))
+        dopamine_desc = random.choice(variations.get('dopamine_variations', ['']))
+        blended_desc = random.choice(variations.get('blended_descriptions', [description]))
+        
+        # Use blended description as the main description
+        user_info += f"{blended_desc}\n"
+        
+        # Add variation hints for AI to use naturally
+        user_info += f"\n# ARCHETYPE VARIATION OPTIONS (use these naturally in conversation, don't repeat)\n"
+        if serotonin_desc:
+            user_info += f"- Serotonin reference: {serotonin_desc}\n"
+        if dopamine_desc:
+            user_info += f"- Dopamine reference: {dopamine_desc}\n"
+        user_info += f"- Alternative description: {neuro_profile}\n"
+    else:
+        user_info += f"{description}\n"
     
     # Add archetype communication style if available
     if 'archetype_communication_styles' in DATING_COACH:
@@ -260,8 +296,16 @@ def build_dating_system_prompt(profile, conversation_history, should_mention_loh
         loha_mention += "Keep it brief (1-2 sentences), natural, and focused on their success. Never be salesy or pushy. "
         loha_mention += "Make it feel like a natural extension of the coaching conversation.\n"
     
+    # Add Cultural Avatars if appropriate (every 6 messages)
+    ca_context = ""
+    if should_use_ca:
+        ca_context, selected_cas = load_cultural_avatars(profile['gender'], session_id)
+        # Track which CAs were mentioned in this session
+        if session_id and session_id in conversations:
+            conversations[session_id]['last_cas_mentioned'] = selected_cas
+    
     # Combine all parts
-    full_prompt = system_prompt + "\n\n" + user_info + "\n\n" + faq_context + loha_mention + history_text + "\n\n# USER'S MESSAGE:\n{user_message}"
+    full_prompt = system_prompt + "\n\n" + user_info + "\n\n" + faq_context + loha_mention + ca_context + history_text + "\n\n# USER'S MESSAGE:\n{user_message}"
     
     return full_prompt
 
@@ -492,19 +536,36 @@ def chat():
         session = conversations[session_id]
         profile = session['profile']
         
-        # Initialize message counter for this session if not exists
-        if session_id not in message_counters:
-            message_counters[session_id] = 0
-        
-        # Increment message counter
-        message_counters[session_id] += 1
+        # Check paywall - if not paid and message limit reached
+        if not check_payment_status(session_id):
+            if session_id not in message_counters:
+                message_counters[session_id] = 0
+            
+            # Increment message counter BEFORE checking limit
+            message_counters[session_id] += 1
+            
+            # Check if this is the paywall message (limit reached)
+            if message_counters[session_id] > PAYWALL_MESSAGE_LIMIT:
+                # Create checkout URL
+                checkout_url = create_polar_checkout(session_id)
+                
+                return jsonify({
+                    'success': True,
+                    'paywall_required': True,
+                    'message': f"Hey! I'm really enjoying our conversation and I can see we're making progress together. To continue our coaching session and dive deeper into your dating journey, there's a small one-time contribution of $2.95. This helps me provide personalized, ongoing support. Click the button below to unlock unlimited access to our conversation!",
+                    'checkout_url': checkout_url,
+                    'message_count': message_counters[session_id]
+                })
         
         # Add user message to history
         session['history'].append({'role': 'user', 'content': user_message})
         
+        # Determine if we should inject Cultural Avatars (every 6 messages)
+        should_use_ca = message_counters[session_id] % 6 == 0 and message_counters[session_id] > 0
+        
         # Build system prompt (with Loha mention flag if appropriate)
         should_mention_loha = message_counters[session_id] % 9 == 0  # Every 9 messages (roughly 8-10 range)
-        system_prompt = build_dating_system_prompt(profile, session['history'], should_mention_loha)
+        system_prompt = build_dating_system_prompt(profile, session['history'], should_mention_loha, should_use_ca, session_id)
         
         # Call AI (now with retry logic)
         try:
@@ -543,6 +604,23 @@ def chat():
             'error': str(e),
             'user_friendly': "I encountered an unexpected issue. Don't worry - I remember everything we've talked about. Just try sending your message again."
         }), 500
+
+# Polar webhook endpoint
+@app.route('/api/polar/webhook', methods=['POST'])
+def polar_webhook():
+    """Handle Polar webhook events"""
+    return handle_polar_webhook(request)
+
+# Success page after payment
+@app.route('/success')
+def success():
+    """Success page after Polar payment"""
+    session_id = request.args.get('checkout_id')
+    if session_id:
+        # Mark session as paid
+        mark_session_paid(session_id)
+        return render_template('success.html', session_id=session_id)
+    return "Payment successful! You can return to your conversation.", 200
 
 if __name__ == '__main__':
     port = int(os.environ.get('PORT', 9024))

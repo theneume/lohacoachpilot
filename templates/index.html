@@ -583,6 +583,67 @@
             0%, 60%, 100% { transform: translateY(0); }
             30% { transform: translateY(-10px); }
         }
+
+        /* Paywall Message Styling */
+        .paywall-message .message-content {
+            background: linear-gradient(135deg, #f39c12 0%, #e67e22 100%);
+            border: 2px solid #ffd93d;
+            box-shadow: 0 8px 25px rgba(243, 156, 18, 0.3);
+        }
+
+        .paywall-content {
+            padding: 10px;
+        }
+
+        .paywall-actions {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .paywall-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: #ffd93d;
+            padding: 16px 28px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 16px;
+            border: 2px solid #ffd93d;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .paywall-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(255, 217, 61, 0.4);
+            background: linear-gradient(135deg, #16213e 0%, #0f3460 100%);
+        }
+
+        .button-icon {
+            font-size: 20px;
+        }
+
+        .button-text {
+            letter-spacing: 0.5px;
+        }
+
+        .paywall-note {
+            text-align: center;
+            margin-top: 15px;
+            color: rgba(26, 26, 46, 0.8);
+            font-size: 12px;
+        }
+
+        @media (max-width: 768px) {
+            .paywall-button {
+                padding: 14px 24px;
+                font-size: 14px;
+            }
+        }
     </style>
 <script src="https://sites.super.myninja.ai/_assets/ninja-daytona-script.js"></script>
 </head>
@@ -961,7 +1022,12 @@
             .then(data => {
                 hideTypingIndicator();
                 if (data.success) {
-                    displayMessage('assistant', data.message);
+                    // Check if paywall is required
+                    if (data.paywall_required) {
+                        displayPaywall(data.message, data.checkout_url);
+                    } else {
+                        displayMessage('assistant', data.message);
+                    }
                 } else {
                     displayMessage('assistant', 'Sorry, something went wrong. Please try again.');
                 }
@@ -1003,6 +1069,30 @@
             if (indicator) {
                 indicator.remove();
             }
+        }
+
+        function displayPaywall(message, checkoutUrl) {
+            const container = document.getElementById('chatContainer');
+            const paywallDiv = document.createElement('div');
+            paywallDiv.className = 'message assistant paywall-message';
+            paywallDiv.innerHTML = `
+                <div class="message-content">
+                    <div class="paywall-content">
+                        ${message.replace(/\\n/g, '<br>')}
+                        <div class="paywall-actions">
+                            <a href="${checkoutUrl}" target="_blank" class="paywall-button">
+                                <span class="button-icon">🔓</span>
+                                <span class="button-text">Continue Conversation - $2.95</span>
+                            </a>
+                        </div>
+                        <p class="paywall-note">
+                            <small>✨ One-time payment • Secure checkout • Instant access</small>
+                        </p>
+                    </div>
+                </div>
+            `;
+            container.appendChild(paywallDiv);
+            container.scrollTop = container.scrollHeight;
         }
 
         function resetChat() {

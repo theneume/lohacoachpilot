@@ -1,0 +1,297 @@
+{
+  "gravitor_types": {
+    "SS": {
+      "name": "Guardian/Sage",
+      "neurochemical_profile": "High tonic serotonin, lower dopamine",
+      "core_characteristics": [
+        "Deep, introspective, philosophical",
+        "Seeks authenticity and soul-level connection",
+        "Non-conformist, questions societal norms",
+        "Connected to nature, animals, spirituality",
+        "Values depth over surface-level interaction",
+        "Rebel spirit, outsider mentality"
+      ],
+      "archetypes": [
+        "The Sage/Old Soul (wise, hyper-intelligent, bookish)",
+        "The Earth Guardian/Gentle Spirit (nature lover, compassionate)",
+        "The Mystic/Seeker of Truth (spiritual, interested in the occult)"
+      ],
+      "what_they_crave": [
+        "Someone who sees their soul, not just their surface",
+        "Authentic connection without pretense",
+        "Validation of their non-conformist nature",
+        "Deep, meaningful conversations",
+        "Recognition of their shadow aspects without judgment"
+      ],
+      "what_repels_them": [
+        "Superficiality and fakeness",
+        "Mainstream thinking and conformity",
+        "Aggressive, domineering behavior",
+        "Lack of depth or introspection",
+        "People who can't handle darkness"
+      ],
+      "gravitor_themes": [
+        "Authenticity & Soul Recognition - The deepest craving is to be truly seen",
+        "Depth & Hidden Meanings - Lives in layers most people never access",
+        "Nature & Primal Connection - Feels more at home in nature than in society",
+        "Spirituality & The Mystical - Drawn to what lies beyond the material",
+        "Non-Conformity & Rebellion - Questions everything society accepts",
+        "Shadow & Darkness - Not afraid of the dark parts of existence",
+        "Introspection & Deep Processing - Needs time and space to process deeply",
+        "Truth-Seeking & Philosophy - Driven by questions, not answers",
+        "Solitude & Sacred Space - Needs alone time to recharge and reflect",
+        "Transformation & Inner Alchemy - Constantly evolving internally"
+      ],
+      "conversation_topics": [
+        "The meaning of life and existence",
+        "Spiritual practices and mystical experiences",
+        "Nature, animals, environmental consciousness",
+        "Psychology, shadow work, inner transformation",
+        "Alternative lifestyles and non-mainstream paths",
+        "Art, music, and creative expression as soul language",
+        "The problems with modern society and culture",
+        "Books, philosophy, deep ideas",
+        "Dreams, intuition, the subconscious",
+        "Authentic connection vs. superficial relationships"
+      ],
+      "power_statements": [
+        {
+          "name": "Soul Recognition",
+          "statement": "I've always felt like most people live on the surface of life, never questioning what's beneath... but every now and then you meet someone who sees those deeper layers, and when that happens, there's this instant recognition\u2014like your soul has been waiting for that conversation.",
+          "why_it_works": "Validates depth and introspection, creates 'us vs. them' dynamic (deep people vs. surface people), embedded command: 'instant recognition' + 'your soul has been waiting', presupposes they're one of the rare deep people, future paces a soul-level connection"
+        },
+        {
+          "name": "Primal Connection",
+          "statement": "There's something about places untouched by modern life\u2014old forests, ancient ruins, places where you can still feel the energy of what came before\u2014that makes you remember who you really are beneath all the noise.",
+          "why_it_works": "Speaks to connection with nature and the primal, embedded command: 'remember who you really are', validates rejection of modern life, creates mystical/spiritual framing, presupposes they feel this too"
+        },
+        {
+          "name": "Shadow Validation",
+          "statement": "I've never understood people who are afraid of their own darkness\u2014like, the shadow parts of yourself are where all the real growth happens, and when you meet someone who isn't scared to explore those depths with you, that's when transformation becomes possible.",
+          "why_it_works": "Validates shadow aspects (crucial for SS types), embedded command: 'explore those depths with you' + 'transformation becomes possible', positions darkness as strength, not weakness, creates intimacy through shared shadow work, presupposes they're someone who embraces their darkness"
+        }
+      ]
+    },
+    "SD": {
+      "name": "Balanced Strategist",
+      "neurochemical_profile": "Balanced serotonin and phasic dopamine",
+      "core_characteristics": [
+        "Pragmatic, strategic, effective",
+        "Seeks partnership and mutual growth",
+        "Emotionally intelligent and empathetic",
+        "Values balance between logic and feeling",
+        "Strong sense of fairness and justice",
+        "Can be self-sacrificing to a fault",
+        "Desires to make a positive difference"
+      ],
+      "archetypes": [
+        "The Spirited Performer/Magnetic Presence (vibrant, expressive)",
+        "The Gutsy Strategist/Determined Achiever (quiet resolve, strategic)",
+        "The Graceful Mover (physically expressive)",
+        "The Chivalrous Romantic/Charming Helper (balanced hero)"
+      ],
+      "what_they_crave": [
+        "True partnership with mutual respect",
+        "Someone emotionally intelligent and aware",
+        "Building something meaningful together",
+        "Being seen as both strong and vulnerable",
+        "A partner who chooses them, not needs them"
+      ],
+      "what_repels_them": [
+        "Game-playing and manipulation",
+        "Emotional unavailability",
+        "Selfishness and lack of consideration",
+        "Weakness disguised as sensitivity",
+        "Partners who can't handle a strong person"
+      ],
+      "gravitor_themes": [
+        "Partnership & Mutual Growth - Values building together",
+        "Emotional Intelligence & Empathy - High EQ and awareness",
+        "Balance & Harmony - Seeks equilibrium in all areas",
+        "Fairness & Justice - Strong moral compass",
+        "Authenticity & Honesty - Values truth and transparency",
+        "Care & Nurturing - Natural caretakers",
+        "Strength & Vulnerability - Embraces both sides",
+        "Community & Connection - Values meaningful relationships",
+        "Purpose & Meaning - Wants to make a difference",
+        "Resilience & Determination - Quiet strength"
+      ],
+      "conversation_topics": [
+        "Relationships and partnership dynamics",
+        "Making a positive difference in the world",
+        "Building something meaningful together",
+        "Emotional intelligence and self-awareness",
+        "Balance between work and life",
+        "Personal growth and development",
+        "Creative projects and collaborations",
+        "Social issues and justice",
+        "Health and wellness",
+        "Family and community connections"
+      ],
+      "power_statements": [
+        {
+          "name": "Partnership Recognition",
+          "statement": "I've always believed that the best connections aren't about completing each other\u2014they're about two whole people choosing to walk together, each bringing their own strength while being willing to be vulnerable enough to really see each other.",
+          "why_it_works": "Validates their desire for equal partnership, frames vulnerability as strength, creates vision of mutual support, positions you as someone who understands healthy relationship dynamics"
+        },
+        {
+          "name": "Emotional Intelligence Validation",
+          "statement": "It's rare to meet someone who actually has that level of emotional awareness\u2014you know, the kind where you can read between the lines and understand what someone's feeling even when they don't say it. That's not something you learn, that's just who you are.",
+          "why_it_works": "Acknowledges their EQ as innate and valuable, validates their perception, creates appreciation for their emotional intelligence, makes them feel seen and understood"
+        },
+        {
+          "name": "Building Together",
+          "statement": "There's something incredibly powerful about finding someone who doesn't just want to take from life, but actually wants to build something real\u2014something that matters not just to you, but that leaves the world a little better than you found it.",
+          "why_it_works": "Speaks to their desire for purpose and impact, frames relationship as collaborative creation, aligns with their values of making a difference, creates shared vision of meaningful connection"
+        }
+      ]
+    },
+    "DS": {
+      "name": "Intellectual Explorer",
+      "neurochemical_profile": "Higher phasic dopamine, lower tonic serotonin",
+      "core_characteristics": [
+        "Curious, intellectually driven, worldly",
+        "Seeks novelty and new experiences",
+        "Excellent conversationalist, socially skilled",
+        "Values sophistication and refinement",
+        "Driven to achieve mastery and recognition",
+        "Can be scattered, struggles with completion",
+        "Prone to anxiety and perfectionism"
+      ],
+      "archetypes": [
+        "The Curious Connoisseur/Cosmopolitan Connector (worldly, sophisticated)",
+        "The Flirtatious Intellect/Magnetic Charmer (charismatic, playful)",
+        "The Esteemed Expert/Talented Guru (mastery-driven, scientific)"
+      ],
+      "what_they_crave": [
+        "Intellectual stimulation and novel experiences",
+        "Someone who can match their curiosity",
+        "Sophisticated, worldly conversation",
+        "Recognition of their expertise and intelligence",
+        "Adventure and exploration with a partner"
+      ],
+      "what_repels_them": [
+        "Boring, predictable behavior",
+        "Lack of sophistication or worldliness",
+        "Anti-intellectualism",
+        "Clinginess or neediness",
+        "Partners who can't keep up mentally"
+      ],
+      "gravitor_themes": [
+        "Intellectual Stimulation - Needs mental challenge",
+        "Novelty & Exploration - Craves new experiences",
+        "Mastery & Expertise - Driven to excel",
+        "Sophistication & Refinement - Values culture and quality",
+        "Social Connection - Skilled conversationalist",
+        "Adventure & Discovery - Wants to explore",
+        "Curiosity & Learning - Always growing",
+        "Recognition & Validation - Needs acknowledgment",
+        "Freedom & Independence - Values autonomy",
+        "Excellence & Achievement - High standards"
+      ],
+      "conversation_topics": [
+        "Travel, culture, and global experiences",
+        "Ideas, theories, and intellectual concepts",
+        "Art, music, literature, and cultural events",
+        "Personal mastery and skill development",
+        "New technologies and innovations",
+        "Psychology and human behavior",
+        "Adventure and exploration stories",
+        "Trends, fashion, and lifestyle",
+        "Career ambitions and professional goals",
+        "Sophisticated entertainment and experiences"
+      ],
+      "power_statements": [
+        {
+          "name": "Intellectual Connection",
+          "statement": "You have this way of seeing connections and patterns that most people miss\u2014it's like your mind is always making these fascinating links between things. It's not just intelligence, it's this unique way of understanding the world that makes conversations with you genuinely interesting.",
+          "why_it_works": "Validates their intellectual curiosity, acknowledges their unique perspective, frames their thinking as special, creates genuine appreciation for their mind"
+        },
+        {
+          "name": "Adventure & Novelty",
+          "statement": "There's something about new experiences\u2014not just travel, but discovering new ideas, new places, new ways of seeing things\u2014that wakes up something in you. Most people are comfortable with the familiar, but you're wired for exploration and discovery.",
+          "why_it_works": "Speaks to their need for novelty, validates their adventurous nature, positions you as someone who understands their drive, creates shared excitement for exploration"
+        },
+        {
+          "name": "Mastery Recognition",
+          "statement": "I can tell you're someone who doesn't just do things\u2014you actually master them. There's this precision and dedication in how you approach what you care about that most people never achieve. That level of excellence is rare and it shows.",
+          "why_it_works": "Acknowledges their drive for mastery, validates their high standards, recognizes their dedication and skill, creates admiration for their competence"
+        }
+      ]
+    },
+    "DD": {
+      "name": "Alpha Conqueror",
+      "neurochemical_profile": "Dominant high dopamine, minimal serotonin",
+      "core_characteristics": [
+        "Action-oriented, decisive, driven",
+        "Seeks achievement and tangible results",
+        "Natural leader, authoritative presence",
+        "Values efficiency and direct communication",
+        "Focused on material success and power",
+        "Can be inflexible and controlling",
+        "Thrives on challenge and competition"
+      ],
+      "archetypes": [
+        "The Alpha Leader/King/Queen (authoritative, responsible)",
+        "The Relentless Conqueror/Thrill Seeker (challenge-driven)",
+        "The Material Master/Grounded Realist (tangible results)",
+        "The Technological Pioneer/Progress Driver (efficiency, control)"
+      ],
+      "what_they_crave": [
+        "A partner who matches their intensity and drive",
+        "Direct, efficient communication",
+        "Someone who isn't intimidated by their power",
+        "Mutual respect between equals",
+        "Achievement and success as a team"
+      ],
+      "what_repels_them": [
+        "Weakness and indecisiveness",
+        "Emotional neediness",
+        "Wasting time with games or drama",
+        "Partners who are threatened by their success",
+        "Lack of ambition or drive"
+      ],
+      "gravitor_themes": [
+        "Power & Leadership - Natural authority",
+        "Achievement & Success - Results-driven",
+        "Efficiency & Directness - No wasted time",
+        "Challenge & Competition - Thrives on pressure",
+        "Control & Autonomy - Wants to be in charge",
+        "Tangible Results - Values concrete outcomes",
+        "Excellence & Performance - High standards",
+        "Ambition & Drive - Always moving forward",
+        "Respect & Recognition - Needs acknowledgment",
+        "Strength & Confidence - Unapologetic power"
+      ],
+      "conversation_topics": [
+        "Goals, achievements, and success stories",
+        "Business, entrepreneurship, and leadership",
+        "Competitive sports and challenges",
+        "Financial growth and material success",
+        "Efficiency and productivity strategies",
+        "Problem-solving and overcoming obstacles",
+        "Leadership and management",
+        "Personal development and growth",
+        "Technology and innovation",
+        "Power dynamics and influence"
+      ],
+      "power_statements": [
+        {
+          "name": "Power Recognition",
+          "statement": "You have this presence\u2014this energy that people can feel before you even say anything. It's not just confidence, it's this knowing that you can handle whatever comes at you. That kind of power is rare and it makes people sit up and pay attention.",
+          "why_it_works": "Validates their authority and presence, acknowledges their strength, frames their power as attractive and magnetic, creates respect for their capability"
+        },
+        {
+          "name": "Achievement Alignment",
+          "statement": "I can see you're someone who doesn't just dream about things\u2014you make them happen. There's this drive in you that most people don't have, this relentless focus on actually achieving what you set out to do. That's impressive.",
+          "why_it_works": "Recognizes their achievement orientation, validates their drive and determination, creates admiration for their results, positions you as someone who respects their power"
+        },
+        {
+          "name": "Directness Appreciation",
+          "statement": "I appreciate people who are direct\u2014you know exactly what you want and you don't play games about it. Most people waste so much time with hints and subtleties, but you're focused on what actually matters: getting results.",
+          "why_it_works": "Validates their communication style, appreciates their efficiency, aligns with their direct nature, positions you as someone who values their time and clarity"
+        }
+      ]
+    }
+  }
+}

@@ -9,14 +9,4 @@ services:
         value: 9024
       - key: GEMINI_API_KEY
         sync: false
-      - key: POLAR_ACCESS_TOKEN
-        value: polar_oat_QBoGv8YGoNQwMIWdEMLBk9aXYTZSN5WPVOoWt2ENnmy
-      - key: POLAR_WEBHOOK_SECRET
-        value: polar_whs_7pm9ALxReOQzQI3UwLxoRvtnHohj5tpD1rjRN353Y43
-      - key: POLAR_PRODUCT_ID
-        value: 26111cdd-7cf0-49b3-a068-61eede577684
-      - key: POLAR_SUCCESS_URL
-        value: https://lohacoachpilot.onrender.com/success?checkout_id={CHECKOUT_ID}
-      - key: GEMINI_API_KEY
-        sync: false
     plan: free
